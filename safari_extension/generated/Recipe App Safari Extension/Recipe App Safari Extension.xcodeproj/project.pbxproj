@@ -1,0 +1,835 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7EA780DE2F3802AF00DC9A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA780DD2F3802AF00DC9A13 /* AppDelegate.swift */; };
+		7EA780E22F3802AF00DC9A13 /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 7EA780E02F3802AF00DC9A13 /* Main.html */; };
+		7EA780E42F3802AF00DC9A13 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EA780E32F3802AF00DC9A13 /* Icon.png */; };
+		7EA780E62F3802AF00DC9A13 /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 7EA780E52F3802AF00DC9A13 /* Style.css */; };
+		7EA780E82F3802AF00DC9A13 /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA780E72F3802AF00DC9A13 /* Script.js */; };
+		7EA780EA2F3802AF00DC9A13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA780E92F3802AF00DC9A13 /* ViewController.swift */; };
+		7EA780ED2F3802AF00DC9A13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EA780EB2F3802AF00DC9A13 /* Main.storyboard */; };
+		7EA780EF2F3802B000DC9A13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EA780EE2F3802B000DC9A13 /* Assets.xcassets */; };
+		7EA780FC2F3802B000DC9A13 /* Recipe_App_Safari_ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA780FB2F3802B000DC9A13 /* Recipe_App_Safari_ExtensionTests.swift */; };
+		7EA781062F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA781052F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITests.swift */; };
+		7EA781082F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA781072F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITestsLaunchTests.swift */; };
+		7EA7810E2F3802B000DC9A13 /* Recipe App Safari Extension Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7EA7810D2F3802B000DC9A13 /* Recipe App Safari Extension Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7EA781132F3802B000DC9A13 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA781122F3802B000DC9A13 /* SafariWebExtensionHandler.swift */; };
+		7EA7812C2F3802B100DC9A13 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA781262F3802B100DC9A13 /* popup.js */; };
+		7EA7812D2F3802B100DC9A13 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 7EA781272F3802B100DC9A13 /* background.js */; };
+		7EA7812E2F3802B100DC9A13 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 7EA781282F3802B100DC9A13 /* popup.html */; };
+		7EA7812F2F3802B100DC9A13 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 7EA781292F3802B100DC9A13 /* icons */; };
+		7EA781302F3802B100DC9A13 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EA7812A2F3802B100DC9A13 /* manifest.json */; };
+		7EA781312F3802B100DC9A13 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 7EA7812B2F3802B100DC9A13 /* popup.css */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EA780F82F3802B000DC9A13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EA780D22F3802AF00DC9A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EA780D92F3802AF00DC9A13;
+			remoteInfo = "Recipe App Safari Extension";
+		};
+		7EA781022F3802B000DC9A13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EA780D22F3802AF00DC9A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EA780D92F3802AF00DC9A13;
+			remoteInfo = "Recipe App Safari Extension";
+		};
+		7EA7810F2F3802B000DC9A13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EA780D22F3802AF00DC9A13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EA7810C2F3802B000DC9A13;
+			remoteInfo = "Recipe App Safari Extension Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7EA7811B2F3802B000DC9A13 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7EA7810E2F3802B000DC9A13 /* Recipe App Safari Extension Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7EA780DA2F3802AF00DC9A13 /* Recipe App Safari Extension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App Safari Extension.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA780DD2F3802AF00DC9A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7EA780E12F3802AF00DC9A13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		7EA780E32F3802AF00DC9A13 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		7EA780E52F3802AF00DC9A13 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		7EA780E72F3802AF00DC9A13 /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		7EA780E92F3802AF00DC9A13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7EA780EC2F3802AF00DC9A13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7EA780EE2F3802B000DC9A13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7EA780F02F3802B000DC9A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EA780F12F3802B000DC9A13 /* Recipe_App_Safari_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Recipe_App_Safari_Extension.entitlements; sourceTree = "<group>"; };
+		7EA780F22F3802B000DC9A13 /* Recipe App Safari Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Recipe App Safari Extension.entitlements"; sourceTree = "<group>"; };
+		7EA780F72F3802B000DC9A13 /* Recipe App Safari ExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Recipe App Safari ExtensionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA780FB2F3802B000DC9A13 /* Recipe_App_Safari_ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_App_Safari_ExtensionTests.swift; sourceTree = "<group>"; };
+		7EA781012F3802B000DC9A13 /* Recipe App Safari ExtensionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Recipe App Safari ExtensionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA781052F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_App_Safari_ExtensionUITests.swift; sourceTree = "<group>"; };
+		7EA781072F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_App_Safari_ExtensionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7EA7810D2F3802B000DC9A13 /* Recipe App Safari Extension Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Recipe App Safari Extension Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA781122F3802B000DC9A13 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		7EA781142F3802B000DC9A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EA781152F3802B000DC9A13 /* Recipe_App_Safari_Extension_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Recipe_App_Safari_Extension_Extension.entitlements; sourceTree = "<group>"; };
+		7EA781262F3802B100DC9A13 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = Resources/popup.js; sourceTree = "<group>"; };
+		7EA781272F3802B100DC9A13 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = Resources/background.js; sourceTree = "<group>"; };
+		7EA781282F3802B100DC9A13 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = Resources/popup.html; sourceTree = "<group>"; };
+		7EA781292F3802B100DC9A13 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
+		7EA7812A2F3802B100DC9A13 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		7EA7812B2F3802B100DC9A13 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = Resources/popup.css; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7EA780D72F3802AF00DC9A13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA780F42F3802B000DC9A13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA780FE2F3802B000DC9A13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA7810A2F3802B000DC9A13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EA780D12F3802AF00DC9A13 = {
+			isa = PBXGroup;
+			children = (
+				7EA780DC2F3802AF00DC9A13 /* Recipe App Safari Extension */,
+				7EA780FA2F3802B000DC9A13 /* Recipe App Safari ExtensionTests */,
+				7EA781042F3802B000DC9A13 /* Recipe App Safari ExtensionUITests */,
+				7EA781112F3802B000DC9A13 /* Recipe App Safari Extension Extension */,
+				7EA780DB2F3802AF00DC9A13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7EA780DB2F3802AF00DC9A13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EA780DA2F3802AF00DC9A13 /* Recipe App Safari Extension.app */,
+				7EA780F72F3802B000DC9A13 /* Recipe App Safari ExtensionTests.xctest */,
+				7EA781012F3802B000DC9A13 /* Recipe App Safari ExtensionUITests.xctest */,
+				7EA7810D2F3802B000DC9A13 /* Recipe App Safari Extension Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EA780DC2F3802AF00DC9A13 /* Recipe App Safari Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7EA780DD2F3802AF00DC9A13 /* AppDelegate.swift */,
+				7EA780E92F3802AF00DC9A13 /* ViewController.swift */,
+				7EA780EB2F3802AF00DC9A13 /* Main.storyboard */,
+				7EA780EE2F3802B000DC9A13 /* Assets.xcassets */,
+				7EA780F02F3802B000DC9A13 /* Info.plist */,
+				7EA780F12F3802B000DC9A13 /* Recipe_App_Safari_Extension.entitlements */,
+				7EA780F22F3802B000DC9A13 /* Recipe App Safari Extension.entitlements */,
+				7EA780DF2F3802AF00DC9A13 /* Resources */,
+			);
+			path = "Recipe App Safari Extension";
+			sourceTree = "<group>";
+		};
+		7EA780DF2F3802AF00DC9A13 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7EA780E02F3802AF00DC9A13 /* Main.html */,
+				7EA780E32F3802AF00DC9A13 /* Icon.png */,
+				7EA780E52F3802AF00DC9A13 /* Style.css */,
+				7EA780E72F3802AF00DC9A13 /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7EA780FA2F3802B000DC9A13 /* Recipe App Safari ExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EA780FB2F3802B000DC9A13 /* Recipe_App_Safari_ExtensionTests.swift */,
+			);
+			path = "Recipe App Safari ExtensionTests";
+			sourceTree = "<group>";
+		};
+		7EA781042F3802B000DC9A13 /* Recipe App Safari ExtensionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7EA781052F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITests.swift */,
+				7EA781072F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITestsLaunchTests.swift */,
+			);
+			path = "Recipe App Safari ExtensionUITests";
+			sourceTree = "<group>";
+		};
+		7EA781112F3802B000DC9A13 /* Recipe App Safari Extension Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7EA781252F3802B100DC9A13 /* Resources */,
+				7EA781122F3802B000DC9A13 /* SafariWebExtensionHandler.swift */,
+				7EA781142F3802B000DC9A13 /* Info.plist */,
+				7EA781152F3802B000DC9A13 /* Recipe_App_Safari_Extension_Extension.entitlements */,
+			);
+			path = "Recipe App Safari Extension Extension";
+			sourceTree = "<group>";
+		};
+		7EA781252F3802B100DC9A13 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7EA781262F3802B100DC9A13 /* popup.js */,
+				7EA781272F3802B100DC9A13 /* background.js */,
+				7EA781282F3802B100DC9A13 /* popup.html */,
+				7EA781292F3802B100DC9A13 /* icons */,
+				7EA7812A2F3802B100DC9A13 /* manifest.json */,
+				7EA7812B2F3802B100DC9A13 /* popup.css */,
+			);
+			name = Resources;
+			path = "Recipe App Safari Extension Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EA780D92F3802AF00DC9A13 /* Recipe App Safari Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EA7811C2F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari Extension" */;
+			buildPhases = (
+				7EA780D62F3802AF00DC9A13 /* Sources */,
+				7EA780D72F3802AF00DC9A13 /* Frameworks */,
+				7EA780D82F3802AF00DC9A13 /* Resources */,
+				7EA7811B2F3802B000DC9A13 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EA781102F3802B000DC9A13 /* PBXTargetDependency */,
+			);
+			name = "Recipe App Safari Extension";
+			packageProductDependencies = (
+			);
+			productName = "Recipe App Safari Extension";
+			productReference = 7EA780DA2F3802AF00DC9A13 /* Recipe App Safari Extension.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7EA780F62F3802B000DC9A13 /* Recipe App Safari ExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EA7811F2F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari ExtensionTests" */;
+			buildPhases = (
+				7EA780F32F3802B000DC9A13 /* Sources */,
+				7EA780F42F3802B000DC9A13 /* Frameworks */,
+				7EA780F52F3802B000DC9A13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EA780F92F3802B000DC9A13 /* PBXTargetDependency */,
+			);
+			name = "Recipe App Safari ExtensionTests";
+			packageProductDependencies = (
+			);
+			productName = "Recipe App Safari ExtensionTests";
+			productReference = 7EA780F72F3802B000DC9A13 /* Recipe App Safari ExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7EA781002F3802B000DC9A13 /* Recipe App Safari ExtensionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EA781222F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari ExtensionUITests" */;
+			buildPhases = (
+				7EA780FD2F3802B000DC9A13 /* Sources */,
+				7EA780FE2F3802B000DC9A13 /* Frameworks */,
+				7EA780FF2F3802B000DC9A13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EA781032F3802B000DC9A13 /* PBXTargetDependency */,
+			);
+			name = "Recipe App Safari ExtensionUITests";
+			packageProductDependencies = (
+			);
+			productName = "Recipe App Safari ExtensionUITests";
+			productReference = 7EA781012F3802B000DC9A13 /* Recipe App Safari ExtensionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		7EA7810C2F3802B000DC9A13 /* Recipe App Safari Extension Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EA781182F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari Extension Extension" */;
+			buildPhases = (
+				7EA781092F3802B000DC9A13 /* Sources */,
+				7EA7810A2F3802B000DC9A13 /* Frameworks */,
+				7EA7810B2F3802B000DC9A13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Recipe App Safari Extension Extension";
+			packageProductDependencies = (
+			);
+			productName = "Recipe App Safari Extension Extension";
+			productReference = 7EA7810D2F3802B000DC9A13 /* Recipe App Safari Extension Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EA780D22F3802AF00DC9A13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					7EA780D92F3802AF00DC9A13 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					7EA780F62F3802B000DC9A13 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 7EA780D92F3802AF00DC9A13;
+					};
+					7EA781002F3802B000DC9A13 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 7EA780D92F3802AF00DC9A13;
+					};
+					7EA7810C2F3802B000DC9A13 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+				};
+			};
+			buildConfigurationList = 7EA780D52F3802AF00DC9A13 /* Build configuration list for PBXProject "Recipe App Safari Extension" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7EA780D12F3802AF00DC9A13;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7EA780DB2F3802AF00DC9A13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EA780D92F3802AF00DC9A13 /* Recipe App Safari Extension */,
+				7EA780F62F3802B000DC9A13 /* Recipe App Safari ExtensionTests */,
+				7EA781002F3802B000DC9A13 /* Recipe App Safari ExtensionUITests */,
+				7EA7810C2F3802B000DC9A13 /* Recipe App Safari Extension Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7EA780D82F3802AF00DC9A13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA780E42F3802AF00DC9A13 /* Icon.png in Resources */,
+				7EA780ED2F3802AF00DC9A13 /* Main.storyboard in Resources */,
+				7EA780E82F3802AF00DC9A13 /* Script.js in Resources */,
+				7EA780E22F3802AF00DC9A13 /* Main.html in Resources */,
+				7EA780EF2F3802B000DC9A13 /* Assets.xcassets in Resources */,
+				7EA780E62F3802AF00DC9A13 /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA780F52F3802B000DC9A13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA780FF2F3802B000DC9A13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA7810B2F3802B000DC9A13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA7812D2F3802B100DC9A13 /* background.js in Resources */,
+				7EA7812F2F3802B100DC9A13 /* icons in Resources */,
+				7EA781312F3802B100DC9A13 /* popup.css in Resources */,
+				7EA781302F3802B100DC9A13 /* manifest.json in Resources */,
+				7EA7812E2F3802B100DC9A13 /* popup.html in Resources */,
+				7EA7812C2F3802B100DC9A13 /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EA780D62F3802AF00DC9A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA780EA2F3802AF00DC9A13 /* ViewController.swift in Sources */,
+				7EA780DE2F3802AF00DC9A13 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA780F32F3802B000DC9A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA780FC2F3802B000DC9A13 /* Recipe_App_Safari_ExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA780FD2F3802B000DC9A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA781082F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITestsLaunchTests.swift in Sources */,
+				7EA781062F3802B000DC9A13 /* Recipe_App_Safari_ExtensionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA781092F3802B000DC9A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA781132F3802B000DC9A13 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EA780F92F3802B000DC9A13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EA780D92F3802AF00DC9A13 /* Recipe App Safari Extension */;
+			targetProxy = 7EA780F82F3802B000DC9A13 /* PBXContainerItemProxy */;
+		};
+		7EA781032F3802B000DC9A13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EA780D92F3802AF00DC9A13 /* Recipe App Safari Extension */;
+			targetProxy = 7EA781022F3802B000DC9A13 /* PBXContainerItemProxy */;
+		};
+		7EA781102F3802B000DC9A13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EA7810C2F3802B000DC9A13 /* Recipe App Safari Extension Extension */;
+			targetProxy = 7EA7810F2F3802B000DC9A13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7EA780E02F3802AF00DC9A13 /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EA780E12F3802AF00DC9A13 /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		7EA780EB2F3802AF00DC9A13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EA780EC2F3802AF00DC9A13 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7EA781162F3802B000DC9A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7EA781172F3802B000DC9A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		7EA781192F3802B000DC9A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Recipe App Safari Extension Extension/Recipe_App_Safari_Extension_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Recipe App Safari Extension Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App Safari Extension Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7EA7811A2F3802B000DC9A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Recipe App Safari Extension Extension/Recipe_App_Safari_Extension_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Recipe App Safari Extension Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App Safari Extension Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7EA7811D2F3802B000DC9A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Recipe App Safari Extension/Recipe App Safari Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Recipe App Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7EA7811E2F3802B000DC9A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Recipe App Safari Extension/Recipe App Safari Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Recipe App Safari Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Recipe App Safari Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7EA781202F3802B000DC9A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recipe App Safari Extension.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Recipe App Safari Extension";
+			};
+			name = Debug;
+		};
+		7EA781212F3802B000DC9A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recipe App Safari Extension.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Recipe App Safari Extension";
+			};
+			name = Release;
+		};
+		7EA781232F3802B000DC9A13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Recipe App Safari Extension";
+			};
+			name = Debug;
+		};
+		7EA781242F3802B000DC9A13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Recipe App Safari Extension";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EA780D52F3802AF00DC9A13 /* Build configuration list for PBXProject "Recipe App Safari Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA781162F3802B000DC9A13 /* Debug */,
+				7EA781172F3802B000DC9A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EA781182F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari Extension Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA781192F3802B000DC9A13 /* Debug */,
+				7EA7811A2F3802B000DC9A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EA7811C2F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA7811D2F3802B000DC9A13 /* Debug */,
+				7EA7811E2F3802B000DC9A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EA7811F2F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari ExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA781202F3802B000DC9A13 /* Debug */,
+				7EA781212F3802B000DC9A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EA781222F3802B000DC9A13 /* Build configuration list for PBXNativeTarget "Recipe App Safari ExtensionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA781232F3802B000DC9A13 /* Debug */,
+				7EA781242F3802B000DC9A13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EA780D22F3802AF00DC9A13 /* Project object */;
+}

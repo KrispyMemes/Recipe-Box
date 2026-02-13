@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Save to Recipe App</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Save to Recipe App</h1>
+      <p class="hint">Review the URL and send it to Recipe App import.</p>
+
+      <label for="url-input">URL</label>
+      <input id="url-input" type="url" autocomplete="off" />
+
+      <button id="save-button" type="button">Save Recipe URL</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
