@@ -2,7 +2,6 @@
 //  Recipe_App_Safari_ExtensionUITestsLaunchTests.swift
 //  Recipe App Safari ExtensionUITests
 //
-//  Created by Doug Shay on 2/7/26.
 //
 
 import XCTest

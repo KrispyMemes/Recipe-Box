@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Recipe App Safari Extension
 //
-//  Created by Doug Shay on 2/7/26.
 //
 
 import Cocoa

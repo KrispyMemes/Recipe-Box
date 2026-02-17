@@ -19,15 +19,15 @@ Run from this repository root:
 
 ```bash
 xcrun safari-web-extension-converter \
-  /Users/dougshay/Developer/RecipeApp/safari_extension/web \
-  --project-location /Users/dougshay/Developer/RecipeApp/safari_extension/generated \
+  ./safari_extension/web \
+  --project-location ./safari_extension/generated \
   --app-name "Recipe App Safari Extension" \
-  --bundle-identifier "com.dougshay.recipeapp.safari"
+  --bundle-identifier "com.example.recipeapp.safari"
 ```
 
 This creates an Xcode project under:
 
-- `/Users/dougshay/Developer/RecipeApp/safari_extension/generated`
+- `safari_extension/generated`
 
 Then:
 
