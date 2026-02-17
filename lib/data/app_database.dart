@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 
 import '../services/platform/platform_capability_service.dart';
 import '../services/storage/app_file_storage.dart';
@@ -25,7 +27,9 @@ class AppDatabase {
   Future<Database> _openDatabase() async {
     final PlatformCapabilityService capabilities =
         createPlatformCapabilityService();
-    if (capabilities.isDesktopFfiPlatform) {
+    if (kIsWeb) {
+      databaseFactory = databaseFactoryFfiWeb;
+    } else if (capabilities.isDesktopFfiPlatform) {
       sqfliteFfiInit();
       databaseFactory = databaseFactoryFfi;
     }
