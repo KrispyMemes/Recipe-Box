@@ -1,9 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import '../../data/recipe_repository.dart';
 import '../../models/recipe.dart';
+import '../../widgets/local_file_image.dart';
 
 class ThisWeekScreen extends StatefulWidget {
   const ThisWeekScreen({required this.repository, super.key});
@@ -297,9 +296,9 @@ class _RecipeThumb extends StatelessWidget {
   Widget build(BuildContext context) {
     final String? localPath = thumbnailPath?.trim();
     if (localPath != null && localPath.isNotEmpty) {
-      final File localFile = File(localPath);
-      if (localFile.existsSync()) {
-        return Image.file(localFile, fit: BoxFit.cover);
+      final Widget? localImage = buildLocalFileImage(localPath, fit: BoxFit.cover);
+      if (localImage != null) {
+        return localImage;
       }
     }
 

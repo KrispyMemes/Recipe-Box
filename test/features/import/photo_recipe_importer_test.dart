@@ -6,7 +6,7 @@ void main() {
   test(
     'photo OCR parser splits ingredients and directions from section headers',
     () {
-      final PhotoRecipeImporter importer = PhotoRecipeImporter();
+      final PhotoRecipeImporter importer = createPhotoRecipeImporter();
       final recipe = importer.buildRecipeInputFromText(
         '''
 Grandma Chili
@@ -30,7 +30,7 @@ Add tomatoes and simmer
   );
 
   test('photo OCR parser falls back when text is missing', () {
-    final PhotoRecipeImporter importer = PhotoRecipeImporter();
+    final PhotoRecipeImporter importer = createPhotoRecipeImporter();
     final recipe = importer.buildRecipeInputFromText(
       '',
       thumbnailPath: '/tmp/empty.jpg',
