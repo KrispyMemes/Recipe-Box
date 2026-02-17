@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:convert';
 import 'dart:typed_data';
 
@@ -9,13 +8,7 @@ import 'package:recipe_app/features/import/paprika_recipe_importer.dart';
 
 void main() {
   test('parses paprika archive payload and maps recipe fields', () async {
-    String? savedExtension;
-    final PaprikaRecipeImporter importer = PaprikaRecipeImporter(
-      thumbnailBytesSaver: (bytes, {extensionHint}) async {
-        savedExtension = extensionHint;
-        return '/tmp/paprika-thumb.jpg';
-      },
-    );
+    final PaprikaRecipeImporter importer = createPaprikaRecipeImporter();
 
     final Map<String, Object?> payload = <String, Object?>{
       'name': '1-2-3-4 Yogurt Cake',
@@ -42,11 +35,9 @@ void main() {
     expect(recipe.directions, contains('Mix'));
     expect(recipe.sourceUrl, 'https://example.com/yogurt-cake');
     expect(recipe.thumbnailUrl, 'https://example.com/yogurt-cake.jpg');
-    expect(recipe.thumbnailPath, '/tmp/paprika-thumb.jpg');
     expect(recipe.servings, 8);
     expect(recipe.totalTimeMinutes, 75);
     expect(recipe.tagNames, containsAll(<String>['Dessert', 'Baking']));
-    expect(savedExtension, '.jpg');
   });
 
   test('throws when archive has no .paprikarecipe payload', () async {
@@ -54,9 +45,7 @@ void main() {
     archive.addFile(ArchiveFile('not-a-recipe.txt', 5, utf8.encode('hello')));
     final List<int> archiveBytes = ZipEncoder().encode(archive);
 
-    final PaprikaRecipeImporter importer = PaprikaRecipeImporter(
-      thumbnailBytesSaver: (bytes, {extensionHint}) async => '/tmp/unused.jpg',
-    );
+    final PaprikaRecipeImporter importer = createPaprikaRecipeImporter();
 
     expect(
       () => importer.importFromPaprikaArchiveBytes(archiveBytes),

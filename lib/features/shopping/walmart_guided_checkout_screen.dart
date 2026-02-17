@@ -1,11 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../data/recipe_repository.dart';
 import '../../models/weekly_planning.dart';
+import '../../services/platform/platform_capability_service.dart';
 import 'walmart_assist.dart';
 
 class WalmartGuidedCheckoutScreen extends StatefulWidget {
@@ -28,6 +27,7 @@ class _WalmartGuidedCheckoutScreenState
   WebViewController? _webViewController;
   late final List<ShoppingListItemModel> _orderedItems;
   late final bool _embeddedBrowserSupported;
+  final PlatformCapabilityService _capabilities = createPlatformCapabilityService();
 
   _GuidedStep _step = _GuidedStep.setup;
   String? _activeItemId;
@@ -39,8 +39,7 @@ class _WalmartGuidedCheckoutScreenState
   @override
   void initState() {
     super.initState();
-    _embeddedBrowserSupported =
-        Platform.isAndroid || Platform.isIOS || Platform.isMacOS;
+    _embeddedBrowserSupported = _capabilities.supportsEmbeddedBrowser;
     _orderedItems = List<ShoppingListItemModel>.from(
       widget.shoppingItems.where((item) => !item.checked),
     );

@@ -1,8 +1,7 @@
-import 'dart:io';
-
-import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+
+import '../services/platform/platform_capability_service.dart';
+import '../services/storage/app_file_storage.dart';
 
 class AppDatabase {
   AppDatabase._();
@@ -24,13 +23,14 @@ class AppDatabase {
   }
 
   Future<Database> _openDatabase() async {
-    if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    final PlatformCapabilityService capabilities =
+        createPlatformCapabilityService();
+    if (capabilities.isDesktopFfiPlatform) {
       sqfliteFfiInit();
       databaseFactory = databaseFactoryFfi;
     }
 
-    final Directory supportDir = await getApplicationSupportDirectory();
-    final String dbPath = p.join(supportDir.path, 'recipe_app.sqlite');
+    final String dbPath = await createAppFileStorage().databasePath('recipe_app.sqlite');
 
     return openDatabase(
       dbPath,

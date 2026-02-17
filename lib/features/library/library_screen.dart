@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:collection';
 
 import 'package:file_selector/file_selector.dart';
@@ -7,38 +6,15 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
 
 import '../../data/recipe_repository.dart';
 import '../../models/import_job.dart';
 import '../../models/recipe.dart';
-import '../import/paprika_recipe_importer.dart';
-import '../import/photo_recipe_importer.dart';
+import '../../services/platform/platform_capability_service.dart';
+import '../../services/storage/app_file_storage.dart';
+import '../../widgets/local_file_image.dart';
+import '../import/import_flow_service.dart';
 import '../import/web_recipe_importer.dart';
-
-Future<String> _saveThumbnailBytes({
-  required Uint8List bytes,
-  String? extensionHint,
-}) async {
-  final Directory supportDir = await getApplicationSupportDirectory();
-  final Directory thumbnailsDir = Directory(
-    p.join(supportDir.path, 'recipe_thumbnails'),
-  );
-  if (!thumbnailsDir.existsSync()) {
-    thumbnailsDir.createSync(recursive: true);
-  }
-
-  String ext = (extensionHint ?? '').toLowerCase();
-  if (ext.isEmpty || ext.length > 6 || !ext.startsWith('.')) {
-    ext = '.jpg';
-  }
-
-  final String filename = 'thumb_${DateTime.now().microsecondsSinceEpoch}$ext';
-  final String outputPath = p.join(thumbnailsDir.path, filename);
-  final File output = File(outputPath);
-  await output.writeAsBytes(bytes, flush: true);
-  return outputPath;
-}
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({required this.repository, super.key});
@@ -52,8 +28,9 @@ class LibraryScreen extends StatefulWidget {
 class LibraryScreenState extends State<LibraryScreen> {
   final TextEditingController _searchController = TextEditingController();
   final WebRecipeImporter _webRecipeImporter = WebRecipeImporter();
-  final PhotoRecipeImporter _photoRecipeImporter = PhotoRecipeImporter();
-  final PaprikaRecipeImporter _paprikaRecipeImporter = PaprikaRecipeImporter();
+  final ImportFlowService _importFlowService = DefaultImportFlowService();
+  final PlatformCapabilityService _capabilities = createPlatformCapabilityService();
+  final AppFileStorage _fileStorage = createAppFileStorage();
 
   bool _isLoading = true;
   bool _isImporting = false;
@@ -528,8 +505,7 @@ class LibraryScreenState extends State<LibraryScreen> {
     if (imagePath == null) {
       return;
     }
-    final bool ocrSupported =
-        Platform.isAndroid || Platform.isIOS || Platform.isMacOS;
+    final bool ocrSupported = _capabilities.supportsOcr;
     if (mounted && !ocrSupported) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -551,8 +527,8 @@ class LibraryScreenState extends State<LibraryScreen> {
     });
 
     try {
-      final RecipeInput importedInput = await _photoRecipeImporter
-          .importFromImagePath(imagePath);
+      final RecipeInput importedInput = await _importFlowService
+          .importPhotoFromPath(imagePath);
       await widget.repository.completeImportJobSuccess(
         jobId: importJobId,
         recipeInput: importedInput,
@@ -604,8 +580,9 @@ class LibraryScreenState extends State<LibraryScreen> {
     });
 
     try {
-      final RecipeInput importedInput = await _paprikaRecipeImporter
-          .importFromPaprikaFile(file.path);
+      final List<int> archiveBytes = await file.readAsBytes();
+      final RecipeInput importedInput = await _importFlowService
+          .importPaprikaFromBytes(archiveBytes, sourceFilePath: file.name);
       await widget.repository.completeImportJobSuccess(
         jobId: importJobId,
         recipeInput: importedInput,
@@ -637,7 +614,7 @@ class LibraryScreenState extends State<LibraryScreen> {
   }
 
   Future<String?> _pickPhotoForImport() async {
-    final bool mobile = Platform.isIOS || Platform.isAndroid;
+    final bool mobile = _capabilities.supportsImagePicker;
     final _PhotoImportSource? source =
         await showModalBottomSheet<_PhotoImportSource>(
           context: context,
@@ -715,9 +692,10 @@ class LibraryScreenState extends State<LibraryScreen> {
         return null;
       }
 
-      return _saveThumbnailBytes(
-        bytes: response.bodyBytes,
+      return _fileStorage.saveThumbnailBytes(
+        response.bodyBytes,
         extensionHint: p.extension(uri.path),
+        filenamePrefix: 'thumb',
       );
     } catch (_) {
       return null;
@@ -1002,9 +980,9 @@ class _RecipeThumbnail extends StatelessWidget {
   Widget build(BuildContext context) {
     final String? localPath = thumbnailPath?.trim();
     if (localPath != null && localPath.isNotEmpty) {
-      final File localFile = File(localPath);
-      if (localFile.existsSync()) {
-        return Image.file(localFile, fit: fit);
+      final Widget? localImage = buildLocalFileImage(localPath, fit: fit);
+      if (localImage != null) {
+        return localImage;
       }
     }
 
@@ -1643,8 +1621,8 @@ class _RecipeEditorDialogState extends State<_RecipeEditorDialog> {
   }
 
   Widget _buildThumbnailEditor() {
-    final bool canUseImagePicker = Platform.isAndroid || Platform.isIOS;
-    final bool canUseCamera = Platform.isAndroid || Platform.isIOS;
+    final bool canUseImagePicker = _capabilities.supportsImagePicker;
+    final bool canUseCamera = _capabilities.supportsCamera;
 
     return Container(
       padding: const EdgeInsets.all(10),
@@ -1749,10 +1727,11 @@ class _RecipeEditorDialogState extends State<_RecipeEditorDialog> {
 
   Future<void> _setThumbnailFromLocalPath(String inputPath) async {
     try {
-      final Uint8List bytes = await File(inputPath).readAsBytes();
-      final String savedPath = await _saveThumbnailBytes(
+      final Uint8List bytes = await _fileStorage.readAsBytes(inputPath);
+      final String savedPath = await _fileStorage.saveThumbnailBytes(
         bytes: bytes,
         extensionHint: p.extension(inputPath),
+        filenamePrefix: 'thumb',
       );
       if (!mounted) {
         return;
@@ -1810,9 +1789,10 @@ class _RecipeEditorDialogState extends State<_RecipeEditorDialog> {
       final Uri uri = Uri.parse(url);
       final http.Response response = await http.get(uri);
       if (response.statusCode >= 200 && response.statusCode < 300) {
-        final String savedPath = await _saveThumbnailBytes(
-          bytes: response.bodyBytes,
+        final String savedPath = await _fileStorage.saveThumbnailBytes(
+          response.bodyBytes,
           extensionHint: p.extension(uri.path),
+          filenamePrefix: 'thumb',
         );
         if (!mounted) {
           return;
