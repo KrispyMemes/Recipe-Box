@@ -2,14 +2,13 @@
 //  ViewController.swift
 //  Recipe App Safari Extension
 //
-//  Created by Doug Shay on 2/7/26.
 //
 
 import Cocoa
 import SafariServices
 import WebKit
 
-let extensionBundleIdentifier = "com.dougshay.recipeapp.Recipe-App-Safari-Extension.Extension"
+let extensionBundleIdentifier = "com.example.recipeapp.Recipe-App-Safari-Extension.Extension"
 
 class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHandler {
 

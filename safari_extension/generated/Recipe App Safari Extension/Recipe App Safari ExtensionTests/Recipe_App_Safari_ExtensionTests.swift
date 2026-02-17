@@ -2,7 +2,6 @@
 //  Recipe_App_Safari_ExtensionTests.swift
 //  Recipe App Safari ExtensionTests
 //
-//  Created by Doug Shay on 2/7/26.
 //
 
 import Testing

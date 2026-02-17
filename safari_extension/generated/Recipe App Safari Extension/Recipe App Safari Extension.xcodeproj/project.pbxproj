@@ -607,7 +607,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-Extension.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -637,7 +637,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-Extension.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -673,7 +673,7 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -709,7 +709,7 @@
 					"-framework",
 					WebKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -726,7 +726,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-ExtensionTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -743,7 +743,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-ExtensionTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -758,7 +758,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-ExtensionUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -773,7 +773,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dougshay.recipeapp.Recipe-App-Safari-ExtensionUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.recipeapp.Recipe-App-Safari-ExtensionUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
