@@ -15,7 +15,7 @@ class _WebAppFileStorage implements AppFileStorage {
 
   @override
   Future<String> databasePath(String filename) {
-    throw UnsupportedError('Local database storage is not available on web.');
+    return Future<String>.value(filename);
   }
 
   @override
