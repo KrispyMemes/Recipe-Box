@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Recipe App icon">
+  <rect width="512" height="512" rx="96" fill="#0175C2"/>
+  <g fill="#ffffff">
+    <path d="M140 170h232a18 18 0 0 1 18 18v18H122v-18a18 18 0 0 1 18-18z"/>
+    <path d="M122 226h268v36a104 104 0 0 1-104 104h-60a104 104 0 0 1-104-104v-36z"/>
+    <circle cx="210" cy="280" r="16" fill="#0175C2"/>
+    <circle cx="256" cy="314" r="16" fill="#0175C2"/>
+    <circle cx="302" cy="280" r="16" fill="#0175C2"/>
+  </g>
+</svg>

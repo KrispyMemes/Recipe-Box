@@ -30,6 +30,23 @@ flutter test
 flutter run -d macos
 ```
 
+## Web/GitHub Pages
+
+From the repository root, use the following command sequence to (re)generate the static web artifact for GitHub Pages:
+
+```bash
+flutter config --enable-web
+flutter create --platforms=web .
+flutter pub get
+flutter build web --release
+ls -la build/web/index.html
+```
+
+Notes:
+- `flutter build web` writes output to `build/web/` by default.
+- `ls -la build/web/index.html` is the quick verification step that confirms `index.html` was produced.
+- If you publish from GitHub Pages, upload or deploy the contents of `build/web/`.
+
 ## Project Notes
 
 - Product scope and requirements are in `PRODUCT_V1.md`.
